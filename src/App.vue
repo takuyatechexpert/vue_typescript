@@ -1,8 +1,5 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
-  </div>
+  <router-view></router-view>
 </template>
 
 <script lang="ts">
@@ -11,9 +8,6 @@ import HelloWorld from './components/HelloWorld.vue';
 
 export default Vue.extend({
   name: 'App',
-  components: {
-    HelloWorld
-  }
 });
 </script>
 
