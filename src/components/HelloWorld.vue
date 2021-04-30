@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <h1 class="text-red-500">{{ msg }}</h1>
     <div>{{ book.title }}</div>
     <div>{{ book.author }}</div>
     <div>{{ book.year }}</div>
