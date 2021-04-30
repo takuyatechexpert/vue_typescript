@@ -8,7 +8,7 @@ Vue.component('vue-router', Router)
 
 const routes: Array<RouteConfig> = [
   {
-    path: '/hello-worlds',
+    path: '/hello-world',
     name: 'top',
     component: () => import(
       '../components/HelloWorld.vue'
