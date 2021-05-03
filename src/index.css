@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+* {
+  background-repeat: no-repeat; /* 1 */
+  padding: 0; /* 2 */
+  margin: 0;
+}
+
+.btn {
+  @apply bg-pink-400 rounded-md px-2;
+}
 @tailwind utilities;
