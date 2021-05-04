@@ -1,12 +1,10 @@
 <template>
-<div>
+<div class="max-w-7xl m-auto bg-blue-50 p-2 h-screen">
   <header class="text-4xl py-3 pl-4">
     {{ title }}
   </header>
 
-  <div class="h-screen max-w-7xl bg-blue-50 m-auto p-2">
-    <slot />
-  </div>
+  <slot />
 </div>
 </template>
 
