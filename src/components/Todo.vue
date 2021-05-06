@@ -7,18 +7,18 @@
         class="border border-black w-4/12 rounded-md h-full px-2"
       />
       <button
-        class="mx-3 h-full btn hover:bg-pink-500 focus:outline-none focus:ring focus:ring-pink-400"
+        class="mx-3 h-full btn bg-pink-400 hover:bg-pink-500 focus:ring-pink-400"
         @click="onSend()">
         Send
       </button>
     </div>
 
-    <div class="mt-4 text-xl overflow-auto h-200">
-      <ul class="w-2/5 m-auto">
+    <div class="mt-4 text-xl overflow-auto h-800">
+      <ul class="w-2/5 m-auto p-2">
         <li v-for="(todo, index) in todos"
           :key="index">
           {{ todo }}
-          <button class="bg-blue-300 btn ml-3 mb-2 hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300"
+          <button class="bg-blue-300 btn ml-3 mb-2 hover:bg-blue-400 focus:ring-blue-300"
             @click="onDelete(index)">
             Done
           </button>
@@ -33,10 +33,10 @@ import vue from 'vue'
 
 interface Data {
   formData: {
-    todo: string;
-  };
+    todo: string,
+  }
 
-  todos: string[];
+  todos: string[]
 }
 
 export default vue.extend({
@@ -54,20 +54,14 @@ export default vue.extend({
   watch: {
     formData: {
       handler() {
-        let comFlag = true
-
         window.addEventListener('compositionstart', () => {
-          comFlag = false
+          return
         })
 
         window.addEventListener('keydown', (e) => {
-           if (e.key === 'Enter' && comFlag) {
+           if (e.key === 'Enter') {
             this.onSend()
           }
-        })
-
-        window.addEventListener('compositionend', () => {
-          comFlag = true
         })
       },
       deep: true,
@@ -76,21 +70,21 @@ export default vue.extend({
 
   methods: {
     onSend(): void {
-      if (this.formData.todo === "") return;
+      if (this.formData.todo === "") return
 
-      this.todos.push(this.formData.todo);
-      this.formData.todo = "";
+      this.todos.push(this.formData.todo)
+      this.formData.todo = ""
     },
 
     onDelete(index: number): void {
-      this.todos.splice(index, 1);
+      this.todos.splice(index, 1)
     },
   },
 });
 </script>
 
 <style scoped>
-.h-200 {
+.h-800px {
   height: 800px;
 }
 </style>>
