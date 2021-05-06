@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <page title="Hello World">
     <h1 class="text-red-500 text-4xl">{{ msg }}</h1>
     <div>{{ book.title }}</div>
     <div>{{ book.author }}</div>
@@ -7,7 +7,7 @@
 
     <div>Full Name</div>
     <div>{{ fullname }}</div>
-  </div>
+  </page>
 </template>
 
 <script lang="ts">
