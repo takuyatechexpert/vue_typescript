@@ -1,6 +1,6 @@
 <template>
   <div
-    class="sidebar fixed h-screen bg-gray-100"
+    class="sidebar fixed left-0 h-screen bg-gray-100"
     :class="{ active: isSidebarActive }">
     <div class="h-28 p-3 flex justify-between items-center">
       <div
@@ -38,8 +38,8 @@
           <div>logo</div>
           <div
           class="pl-2 menu-text"
-          :class="{ 'active': isSidebarActive }"
-          >TODO</div>
+          :class="{ 'active': isSidebarActive }">
+          TODO</div>
         </router-link>
       </li>
     </ul>
