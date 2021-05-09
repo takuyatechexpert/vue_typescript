@@ -29,10 +29,15 @@ export default vue.extend({
 <style scoped>
 .main-container {
   padding-left: 60px;
-  transition: padding-left 0.2s;
 }
 
-.main-container.shrunked {
-  padding-left: 200px;
+@media (min-width: 768px) {
+  .main-container {
+    transition: padding-left 0.2s;
+  }
+
+  .main-container.shrunked {
+    padding-left: 200px;
+  }
 }
 </style>
