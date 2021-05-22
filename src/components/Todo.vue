@@ -15,7 +15,7 @@
 
     <div class="mt-4 text-xl overflow-auto h-800">
       <ul class="w-2/5 m-auto p-2">
-        <li v-for="(todo, index) in todos"
+        <li v-for="(todo, index) in $store.state.todos"
           :key="index">
           {{ todo }}
           <button class="bg-blue-300 btn ml-3 mb-2 hover:bg-blue-400 focus:ring-blue-300"
@@ -35,8 +35,6 @@ interface Data {
   formData: {
     todo: string,
   }
-
-  todos: string[]
 }
 
 export default vue.extend({
@@ -46,8 +44,6 @@ export default vue.extend({
       formData: {
         todo: "",
       },
-
-      todos: [],
     };
   },
 
@@ -72,12 +68,12 @@ export default vue.extend({
     onSend(): void {
       if (this.formData.todo === "") return
 
-      this.todos.push(this.formData.todo)
+      this.$store.commit('addTodo', this.formData.todo)
       this.formData.todo = ""
     },
 
     onDelete(index: number): void {
-      this.todos.splice(index, 1)
+      this.$store.commit('deleteTodo', index)
     },
   },
 });
