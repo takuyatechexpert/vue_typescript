@@ -1,6 +1,6 @@
 <template>
   <div
-    class="sidebar fixed left-0 h-screen bg-gray-100"
+    class="sidebar fixed left-0 h-screen thema-gray"
     :class="{ active: isSidebarActive }">
     <div class="h-28 p-3 flex justify-between items-center">
       <div
@@ -75,7 +75,7 @@ export default Vue.extend({
 <style scoped>
 .sidebar {
   width: 60px;
-  transition: width 0.2s;
+  transition: width 0.3s;
 }
 
 .sidebar.active {

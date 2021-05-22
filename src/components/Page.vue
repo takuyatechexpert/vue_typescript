@@ -1,5 +1,5 @@
 <template>
-<div class="bg-blue-50 p-5 h-screen">
+<div class="thema-blue p-5 h-screen">
   <header class="text-4xl mb-3">
     {{ title }}
   </header>
