@@ -33,7 +33,7 @@ export default vue.extend({
 
 @media (min-width: 768px) {
   .main-container {
-    transition: padding-left 0.2s;
+    transition: padding-left 0.3s;
   }
 
   .main-container.shrunked {
