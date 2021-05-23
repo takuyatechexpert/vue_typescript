@@ -7,12 +7,14 @@ Vue.use(Vuex)
 type RootState = {
   isSidebarActive: boolean,
   todos: string[],
+  themaRed: boolean,
 }
 
 export default new Vuex.Store({
   state:<RootState> {
     isSidebarActive: false,
     todos: [],
+    themaRed: false,
   },
 
   mutations: {
@@ -27,8 +29,11 @@ export default new Vuex.Store({
 
     deleteTodo(state, index: number): void {
       state.todos.splice(index, 1)
-    }
+    },
 
+    themaRed(state):void {
+      state.themaRed = !state.themaRed
+    },
   },
 
   actions: {

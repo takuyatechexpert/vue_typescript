@@ -1,7 +1,7 @@
 <template>
   <div
-    class="sidebar fixed left-0 h-screen thema-gray"
-    :class="{ active: isSidebarActive }">
+    class="sidebar fixed left-0 h-screen thema-main"
+    :class="{ active: isSidebarActive, 'thema-main-red': isThemaRed }">
     <div class="h-28 p-3 flex justify-between items-center">
       <div
         class="menu-text"
@@ -42,6 +42,15 @@
           TODO</div>
         </router-link>
       </li>
+      <li>
+        <a
+          href="#"
+          class="menu-text hover:text-gray-400"
+          @click="onThemaRed()"
+          :class="{ 'active': isSidebarActive }">
+          Thema Color Red
+        </a>
+      </li>
     </ul>
   </div>  
 </template>
@@ -62,11 +71,19 @@ export default Vue.extend({
     isSidebarActive(): boolean {
       return this.$store.state.isSidebarActive
     },
+
+    isThemaRed():boolean {
+      return this.$store.state.themaRed
+    }
   },
 
   methods: {
     onMenuClick(): void {
       this.$store.commit('toggleSidebar')
+    },
+
+    onThemaRed() {
+      this.$store.commit('themaRed')
     },
   }
 });

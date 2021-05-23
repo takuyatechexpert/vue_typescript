@@ -23,12 +23,22 @@ html {
 
 @tailwind utilities;
 
-.thema-gray {
+/* メインテーマ */
+.thema-main {
   background-color: #f4f6f3;
 }
 
-.thema-blue {
+.thema-secondary {
   background-color: #eff6ff;
+}
+
+/* テーマ赤 */
+.thema-main-red {
+  background-color: #ff4e4e;
+}
+
+.thema-secondary-red {
+  background-color: #440f0f;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -36,14 +46,23 @@ html {
     color: #fff;
   }
 
-  .thema-blue {
+  .thema-secondary {
     background-color: rgb(46, 44, 44);
   }
 
-  .thema-gray {
+  .thema-main {
     background-color: #7c7c7c;
   }
   input {
     background-color: #7c7c7c;
+  }
+
+  /* テーマ赤 */
+  .thema-main-red {
+    background-color: #ff4e4e;
+  }
+
+  .thema-secondary-red {
+    background-color: #440f0f;
   }
 }
