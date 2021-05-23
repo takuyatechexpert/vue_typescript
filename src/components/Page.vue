@@ -1,5 +1,7 @@
 <template>
-<div class="thema-blue p-5 h-screen">
+<div
+  class="thema-secondary p-5 h-screen"
+  :class="{'thema-secondary-red': isThemaRed }">
   <header class="text-4xl mb-3">
     {{ title }}
   </header>
@@ -24,7 +26,11 @@ export default vue.extend({
   computed: {
     isSidebarActive(): boolean {
       return this.$store.state.isSidebarActive
-    }
+    },
+
+    isThemaRed(): boolean {
+      return this.$store.state.themaRed
+    },
   },
 })
 </script>
